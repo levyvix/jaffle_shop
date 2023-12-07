@@ -1,0 +1,7 @@
+{
+    "turntable.warehouse": "postgres",
+    "turntable.dbtVersion": "1.7",
+    "turntable.environmentVariables": [
+        "DBT_PASSWORD=\"admin\""
+    ]
+}

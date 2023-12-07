@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Staging table for customer data
+    columns:
+      - name: customer_id
+        description: Unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: Staging table for order data
+    columns:
+      - name: order_id
+        description: Unique identifier for an order
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: Current status of the order
+        tests:
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - returned
+                - return_pending
+                - placed
