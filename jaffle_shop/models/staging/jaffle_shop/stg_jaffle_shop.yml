@@ -5,7 +5,7 @@ models:
     description: Staging table for customer data
     columns:
       - name: customer_id
-        description: Unique identifier for a customer
+        description: primary key for stg_customers - Unique identifier for a customer
         tests:
           - unique
           - not_null
@@ -14,12 +14,12 @@ models:
     description: Staging table for order data
     columns:
       - name: order_id
-        description: Unique identifier for an order
+        description: primary key for stg_orders - Unique identifier for an order
         tests:
           - unique
           - not_null
       - name: status
-        description: Current status of the order
+        description: '{{doc("order_status")}}'
         tests:
           - accepted_values:
               values:
